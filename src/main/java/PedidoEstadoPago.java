@@ -12,14 +12,12 @@ public class PedidoEstadoPago extends PedidoEstado{
 
     @Override
     public boolean enviarPedido(Pedido pedido) {
-        // Transição válida: Pago -> Enviado
         pedido.setEstado(PedidoEstadoEnviado.getInstance());
         return true;
     }
 
     @Override
     public boolean cancelarPedido(Pedido pedido) {
-        // Transição válida: Pago -> Cancelado (Ex: estornar pagamento)
         pedido.setEstado(PedidoEstadoCancelado.getInstance());
         return true;
     }

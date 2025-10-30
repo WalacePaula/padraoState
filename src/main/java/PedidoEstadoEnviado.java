@@ -12,7 +12,6 @@ public class PedidoEstadoEnviado extends PedidoEstado{
 
     @Override
     public boolean entregarPedido(Pedido pedido) {
-        // Transição válida: Enviado -> Entregue
         pedido.setEstado(PedidoEstadoEntregue.getInstance());
         return true;
     }

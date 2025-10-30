@@ -4,11 +4,9 @@ public class Pedido {
 
     public Pedido(String cliente) {
         this.cliente = cliente;
-        // O estado inicial de todo novo pedido é Aguardando Pagamento
         this.estado = PedidoEstadoAguardandoPagamento.getInstance();
     }
 
-    // Getters e Setters
     public void setEstado(PedidoEstado estado) {
         this.estado = estado;
     }
@@ -25,7 +23,6 @@ public class Pedido {
         return cliente;
     }
 
-    // Métodos que delegam o comportamento para o estado atual
     public boolean aprovarPagamento() {
         return estado.aprovarPagamento(this);
     }
